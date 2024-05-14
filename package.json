@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/MaverickUKR/DevScape-TestTask/issues"
   },
-  "homepage": "https://github.com/MaverickUKR/DevScape-TestTask#readme"
+  "homepage": "https://github.com/MaverickUKR/DevScape-TestTask#readme",
+  "dependencies": {
+    "@prisma/client": "^5.13.0"
+  },
+  "devDependencies": {
+    "prisma": "^5.13.0"
+  },
+  "keywords": []
 }

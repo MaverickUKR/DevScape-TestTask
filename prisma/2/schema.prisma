@@ -1,0 +1,30 @@
+model Product {
+  id        Int      @id @default(autoincrement())
+  sku       String   @unique
+  title     String
+  stocks    Stock[]
+  categories Category[] @relation(references: [id])
+}
+
+model Warehouse {
+  id     Int    @id @default(autoincrement())
+  uuid   String @unique
+  title  String
+  stocks Stock[]
+}
+
+model Category {
+  id        Int      @id @default(autoincrement())
+  slug      String   @unique
+  title     String
+  products  Product[] @relation(references: [id])
+}
+
+model Stock {
+  id          Int       @id @default(autoincrement())
+  quantity    Int
+  productId   Int
+  warehouseId Int
+  product     Product   @relation(fields: [productId], references: [id])
+  warehouse   Warehouse @relation(fields: [warehouseId], references: [id])
+}
